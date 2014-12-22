@@ -1,0 +1,291 @@
+/*
+  NarcissusCSS v0.1 (http://www.reddit.com/r/NarcissusCSS)
+  Copyright (c) 2014 Timur Kuzhagaliyev
+*/
+
+// Variables
+@background-color: #222;
+@background-alt-color: #111;
+@foreground-color: #34495e;
+@foreground-alt-color: #2c3e50;
+@text-color: #f2f2f2;
+@text-alt-color: #ccc;
+@text-secondary-color: #999;
+
+// Mixins
+.box-shadow(@color, @left, @top, @blur, @spread) {
+  -webkit-box-shadow:@color @left @top @blur @spread;
+  -moz-box-shadow:@color @left @top @blur @spread;
+  box-shadow:@color @left @top @blur @spread;
+}
+.inset-box-shadow(@color, @left, @top, @blur, @spread) {
+  -webkit-box-shadow:inset @color @left @top @blur @spread;
+  -moz-box-shadow:inset @color @left @top @blur @spread;
+  box-shadow:inset @color @left @top @blur @spread;
+}
+.rotate(@degree) {
+  -webkit-transform:rotate(@degree);
+  -ms-transform:rotate(@degree);
+  transform:rotate(@degree);
+}
+.default-transition() {
+  -webkit-transition:all 200ms ease-out;
+  transition:all 200ms ease-out;
+}
+
+// CSS
+html {
+  body {
+    background:@background-color;
+    #header {
+      background-color:@foreground-color;
+      border:none;
+      #sr-header-area {
+        background-color:@foreground-alt-color;
+        color:@text-alt-color;
+        border:none;
+        a {
+          color:@text-alt-color;
+          &:hover {
+            color:@text-color;
+          }
+        }
+      }
+      #header-bottom-left {
+        overflow:hidden;
+        height:40px;
+        #header-img, .default-header {
+          display:none;
+        }
+        .pagename {
+          font-family:"Trebuchet MS";
+          vertical-align:middle;
+          display:inline-block;
+          font-variant:normal;
+          position:relative;
+          font-weight:bold;
+          font-size:16px;
+          height:40px;
+          z-index:10;
+          margin:0px;
+          &:hover {
+            text-decoration:none;
+          }
+          a {
+            .default-transition();
+            color:@text-alt-color;
+            position:relative;
+            line-height:40px;
+            padding:0px 15px;
+            display:block;
+            height:40px;
+            z-index:10;
+            &:before {
+              -webkit-box-shadow:@foreground-alt-color 1px -1px 0px, @foreground-alt-color 2px -2px 0px, @foreground-alt-color 3px -3px 0px, @foreground-alt-color 4px -4px 0px;
+              -moz-box-shadow:@foreground-alt-color 1px -1px 0px, @foreground-alt-color 2px -2px 0px, @foreground-alt-color 3px -3px 0px, @foreground-alt-color 4px -4px 0px;
+              box-shadow:@foreground-alt-color 1px -1px 0px, @foreground-alt-color 2px -2px 0px, @foreground-alt-color 3px -3px 0px, @foreground-alt-color 4px -4px 0px;
+              background-color:@foreground-color;
+              border-bottom-left-radius:30px;
+              .default-transition();
+              position:absolute;
+              .rotate(45deg);
+              height:30px;
+              right:-15px;
+              width:30px;
+              content:'';
+              z-index:10;
+              top:5px;
+            }
+            &:hover {
+              background-color:@foreground-alt-color;
+              text-decoration:none;
+              color:@text-color;
+              &:before {
+                background-color:@foreground-alt-color;
+              }
+            }
+          }
+        }
+        ul.tabmenu {
+          font-family:"Trebuchet MS";
+          background-color:none;
+          vertical-align:middle;
+          font-weight:normal;
+          position:relative;
+          font-size:14px;
+          height:40px;
+          margin:0px;
+          li {
+            background-color:transparent;
+            vertical-align:middle;
+            display:inline-block;
+            font-weight:normal;
+            position:relative;
+            border:none;
+            height:40px;
+            margin:0px;
+            &.selected {
+              z-index:1;
+              a {
+                background-color:@foreground-alt-color;
+                color:@text-color;
+                &:before {
+                  background-color:@foreground-alt-color;
+                  z-index:1;
+                }
+              }
+            }
+            a {
+              background-color:@foreground-color;
+              text-transform:capitalize;
+              padding:0px 15px 0px 45px;
+              .default-transition();
+              color:@text-alt-color;
+              position:relative;
+              line-height:40px;
+              display:block;
+              border:none;
+              height:40px;
+              &:before {
+                -webkit-box-shadow:@foreground-alt-color 1px -1px 0px, @foreground-alt-color 2px -2px 0px, @foreground-alt-color 3px -3px 0px, @foreground-alt-color 4px -4px 0px;
+                -moz-box-shadow:@foreground-alt-color 1px -1px 0px, @foreground-alt-color 2px -2px 0px, @foreground-alt-color 3px -3px 0px, @foreground-alt-color 4px -4px 0px;
+                box-shadow:@foreground-alt-color 1px -1px 0px, @foreground-alt-color 2px -2px 0px, @foreground-alt-color 3px -3px 0px, @foreground-alt-color 4px -4px 0px;
+                background-color:@foreground-color;
+                border-bottom-left-radius:30px;
+                .default-transition();
+                position:absolute;
+                .rotate(45deg);
+                height:30px;
+                right:-15px;
+                width:30px;
+                content:'';
+                z-index:10;
+                top:5px;
+              }
+              &:hover {
+                background-color:@foreground-alt-color;
+                text-decoration:none;
+                color:@text-color;
+                &:before {
+                  background-color:@foreground-alt-color;
+                }
+              }
+            }
+          }
+        }
+      }
+      #header-bottom-right {
+
+      }
+    }
+    .side {
+      background-color:transparent;
+      padding:20px 0px 0px 0px;
+      margin:0px 20px 0px 0px;
+      .spacer {
+        margin:0px 0px 20px 0px;
+        #search {
+          input[type="text"] {
+            text-transform:capitalize;
+            color:@foreground-color;
+            line-height:30px;
+            border:none;
+            height:30px;
+            &:focus {
+              color:@foreground-alt-color;
+              text-transform:none;
+              outline:none;
+            }
+          }
+          input[type="submit"] {
+            background-image:url(%%narcissus-search%%);
+            background-color:@foreground-color;
+            background-position:default;
+            margin:0px 0px 0px -30px;
+            background-size:contain;
+            height:30px;
+            content:'';
+            width:30px;
+          }
+        }
+      }
+    }
+    .content {
+      margin:0px;
+      #siteTable {
+        padding:10px 330px 0px 10px;
+        .thing {
+          background-image:url(%%narcissus-thing-bg%%);
+          background-color:@foreground-color;
+          background-repeat:repeat-y;
+          margin:10px 10px 20px 10px;
+          position:relative;
+          padding:0px;
+          .rank {
+            color:@background-alt-color;
+            font-family:"Trebuchet MS";
+            margin:-8px 0px 0px 0px;
+            text-align:center;
+            position:absolute;
+            font-size:14px;
+            height:16px;
+            width:20px;
+            left:-20px;
+            top:50%;
+          }
+          .midcol {
+            padding:10px 0px;
+            height:100%;
+            margin:0px;
+            width:40px;
+            .arrow {
+              background-repeat:no-repeat;
+              background-position:center;
+              background-size:contain;
+              margin:0px 12px;
+              opacity:0.5;
+              height:20px;
+              width:16px;
+              &.upmod, &.up {
+                background-image:url(%%narcissus-arrow-up%%);
+              }
+              &.downmod, &.down {
+                background-image:url(%%narcissus-arrow-down%%);
+              }
+              &.upmod, &.downmod {
+                opacity:1;
+              }
+            }
+            .score {
+              font-family:"Trebuchet MS";
+              color:@text-alt-color;
+              font-weight:normal;
+              text-align:center;
+              font-size:14px;
+              width:40px;
+              &.likes, &.dislikes {
+                color:@text-color;
+              }
+            }
+          }
+          .entry {
+            padding:10px 15px 8px 15px;
+            p.title {
+              a.title {
+                &:link, &:active {
+                  color:@text-color;
+                }
+                &:hover {
+                  color:@text-alt-color;
+                }
+                &:visited {
+                  color:@text-secondary-color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
